@@ -24,6 +24,7 @@
     <meta name="twitter:description" content="Mobilier d'exception importé de Dubai">
     <meta name="twitter:image" content="https://awoulohdesign.com/img/landingimage.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-png" href="/site/img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -223,7 +224,7 @@
             <div class="grid md:grid-cols-2 gap-8">
 
                 <!-- Card Particuliers -->
-                <a href="#catalogues"
+                <a href="https://drive.google.com/file/d/1E6uWUegr62REuP0hp46kMb-hQwTQg6sh/view?usp=drive_link"
                     class="group relative overflow-hidden bg-cream p-12 hover:scale-[1.02] transition-all duration-500">
                     <span class="text-gold text-[9px] tracking-[4px] uppercase block mb-3">Pour vous</span>
                     <h3 class="font-serif text-4xl text-darkBrown mb-4">Particuliers</h3>
@@ -598,14 +599,16 @@
                         <div class="pt-4">
                             <button type="submit"
                                 class="w-full p-6 bg-darkBrown text-cream text-sm tracking-[3px] uppercase cursor-pointer transition-all duration-500 hover:bg-gold hover:text-darkBrown flex justify-center items-center gap-4 group">
-                                <span>Télécharger le Catalogue</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
-                                    stroke-linejoin="round" class="group-hover:translate-y-1 transition-transform">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                    <polyline points="7 10 12 15 17 10"></polyline>
-                                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                                </svg>
+                                <a href="https://drive.google.com/file/d/1E6uWUegr62REuP0hp46kMb-hQwTQg6sh/view?usp=drive_link"
+                                    target="_blank">
+                                    Télécharger le Catalogue
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round" class="group-hover:translate-y-1 transition-transform">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
                             </button>
                         </div>
                     </form>
@@ -690,24 +693,6 @@
 
         <div class="mt-20 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
     </footer>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Simuler l'envoi ou intégrer ton API ici
-
-            // Déclenchement automatique du téléchargement
-            const catalogueUrl = '/site/medias/Catalogue Awoulohdesign (7).pdf'; // Remplacer par ton vrai lien
-            const link = document.createElement('a');
-            link.href = catalogueUrl;
-            link.download = 'Catalogue-Awouloh-Design.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            alert('Merci ! Votre message a été envoyé et votre téléchargement commence.');
-        });
-    </script>
 
     <script>
         // Smooth scroll
