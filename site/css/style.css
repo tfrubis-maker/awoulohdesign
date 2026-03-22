@@ -21,6 +21,42 @@
     #mobile-menu {
         display: none !important;
     }
+
+    #burger-btn {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #burger-btn {
+        display: block !important;
+    }
+}
+
+/* Force le menu burger mobile */
+#mobile-menu {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(26, 20, 16, 0.98) !important;
+    backdrop-filter: blur(16px) !important;
+    z-index: 55 !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.5s ease !important;
+}
+
+#mobile-menu.translate-x-full {
+    transform: translateX(100%) !important;
+}
+
+#mobile-menu:not(.translate-x-full) {
+    transform: translateX(0) !important;
+}
+
+@media (min-width: 768px) {
+    #mobile-menu {
+        display: none !important;
+    }
+
     #burger-btn {
         display: none !important;
     }

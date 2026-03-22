@@ -17,7 +17,7 @@
     <meta property="og:description"
         content="150+ pièces d'exception : canapés, tables, luminaires importés de Dubai. Découvrez notre catalogue.">
     <meta property="og:image" content="https://awoulohdesign.com/img/salon.jpg">
-    <meta property="og:url" content="https://awoulohdesign.com/collections.html">
+    <meta property="og:url" content="https://awoulohdesign.com//site/collections.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
@@ -80,9 +80,15 @@
     <!-- Navbar -->
     <nav
         class="fixed top-0 w-full px-[5%] py-4 flex justify-between items-center z-50 bg-transparent backdrop-blur-sm transition-all duration-300">
-        <div class="font-serif text-sm font-light text-cream tracking-[3px] uppercase"></div>
+        <!-- Logo -->
+        <div class="h-16">
+            <img src="/site/img/logoawoulohdesign-removebg-preview.png" alt="Awouloh Design"
+                class="h-full w-auto object-contain">
+        </div>
+
+        <!-- Menu Desktop -->
         <ul class="hidden md:flex gap-8 items-center">
-            <li><a href="/index.html"
+            <li><a href="/"
                     class="text-cream/80 text-xs font-light tracking-[2px] uppercase hover:text-gold transition-colors duration-300">Accueil</a>
             </li>
             <li><a href="/site/collections.html"
@@ -94,7 +100,57 @@
                     class="px-6 py-2 border border-gold/40 text-gold text-xs tracking-[2px] uppercase hover:bg-gold hover:text-espresso transition-all duration-300">Contact</a>
             </li>
         </ul>
+
+        <!-- Burger Button (Mobile only) -->
+        <button id="burger-btn" class="md:hidden focus:outline-none relative z-[60]">
+            <!-- Icône burger - visible quand menu fermé -->
+            <svg id="burger-icon" class="w-8 h-8 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
+            <!-- Icône croix - visible quand menu ouvert -->
+            <svg id="close-icon" class="w-8 h-8 text-cream hidden absolute top-0 left-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-espresso/98 backdrop-blur-lg z-[55] translate-x-full transition-transform duration-500 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full gap-8 px-8">
+            <a href="/"
+                class="text-cream text-2xl font-light tracking-[3px] uppercase hover:text-gold transition-colors duration-300 mobile-link">
+                Accueil
+            </a>
+            <a href="/site/collections.html"
+                class="text-cream text-2xl font-light tracking-[3px] uppercase hover:text-gold transition-colors duration-300 mobile-link">
+                Collections
+            </a>
+            <a href="/site/professionnels.html"
+                class="text-cream text-2xl font-light tracking-[3px] uppercase hover:text-gold transition-colors duration-300 mobile-link">
+                Professionnels
+            </a>
+            <a href="/site/contact.html"
+                class="px-10 py-4 border-2 border-gold text-gold text-lg tracking-[3px] uppercase hover:bg-gold hover:text-espresso transition-all duration-300 mobile-link">
+                Contact
+            </a>
+
+            <!-- Réseaux sociaux -->
+            <div class="flex gap-6 mt-8">
+                <a href="#" class="text-gold text-3xl hover:text-cream transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-gold text-3xl hover:text-cream transition-colors">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://wa.me/2250706739301" class="text-gold text-3xl hover:text-cream transition-colors">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Section Collections -->
     <section id="collections" class="relative py-32 bg-[#2A1B15] overflow-hidden">
@@ -126,7 +182,7 @@
                 <div
                     class="relative overflow-hidden block shadow-[0_30px_60px_rgba(0,0,0,0.7)] skew-x-[0.5deg] break-inside-avoid">
                     <div class="h-[550px] md:h-[700px] w-full border border-white/5">
-                        <img src="/sitevitrine/awoulohdesign/img/salon.jpg"
+                        <img src="/site/img/salon.jpg"
                             class="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
                             alt="Canapé velours premium">
                     </div>
@@ -140,7 +196,7 @@
                 <div
                     class="relative overflow-hidden block shadow-[0_20px_50px_rgba(0,0,0,0.6)] -skew-x-[0.3deg] break-inside-avoid">
                     <div class="h-[400px] w-full border border-white/5">
-                        <img src="/sitevitrine/awoulohdesign/img/2fad0e79065a245bac6d383a810f2309.jpg"
+                        <img src="/site/img/2fad0e79065a245bac6d383a810f2309.jpg"
                             class="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
                             alt="Table marbre">
                     </div>
@@ -154,7 +210,7 @@
                 <div
                     class="relative overflow-hidden block shadow-[0_20px_50px_rgba(0,0,0,0.6)] skew-x-[0.8deg] break-inside-avoid">
                     <div class="h-[350px] w-full border border-white/5">
-                        <img src="/sitevitrine/awoulohdesign/img/lampe.jpg"
+                        <img src="/site/img/lampe.jpg"
                             class="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
                             alt="Lampe design">
                     </div>
@@ -167,7 +223,7 @@
                 <div
                     class="relative overflow-hidden block shadow-[0_30px_60px_rgba(0,0,0,0.7)] -skew-x-[0.5deg] break-inside-avoid">
                     <div class="h-[650px] md:h-[800px] w-full border border-white/5">
-                        <img src="/sitevitrine/awoulohdesign/img/landingimage.png"
+                        <img src="/site/img/landingimage.png"
                             class="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
                             alt="Ambiance luxe">
                     </div>
@@ -177,7 +233,7 @@
                 <div
                     class="relative overflow-hidden block shadow-[0_20px_50px_rgba(0,0,0,0.6)] skew-x-[0.4deg] break-inside-avoid">
                     <div class="h-[420px] w-full border border-white/5">
-                        <img src="/sitevitrine/awoulohdesign/img/mobilier.jpg"
+                        <img src="/site/img/mobilier.jpg"
                             class="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
                             alt="Fauteuil">
                     </div>
@@ -191,7 +247,7 @@
                 <div
                     class="relative overflow-hidden block shadow-[0_20px_50px_rgba(0,0,0,0.6)] -skew-x-[0.6deg] break-inside-avoid">
                     <div class="h-[380px] w-full border border-white/5">
-                        <img src="/sitevitrine/awoulohdesign/img/salon.jpg"
+                        <img src="/site/img/salon.jpg"
                             class="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
                             alt="Décoration">
                     </div>
@@ -201,7 +257,7 @@
                 <div
                     class="relative overflow-hidden block shadow-[0_20px_50px_rgba(0,0,0,0.6)] skew-x-[0.3deg] break-inside-avoid">
                     <div class="h-[450px] w-full border border-white/5">
-                        <img src="/sitevitrine/awoulohdesign/img/2fad0e79065a245bac6d383a810f2309.jpg"
+                        <img src="/site/img/2fad0e79065a245bac6d383a810f2309.jpg"
                             class="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
                             alt="Table design">
                     </div>
@@ -211,7 +267,7 @@
                 <div
                     class="relative overflow-hidden block shadow-[0_30px_60px_rgba(0,0,0,0.7)] -skew-x-[0.4deg] break-inside-avoid">
                     <div class="h-[600px] w-full border border-white/5">
-                        <img src="/sitevitrine/awoulohdesign/img/lampe.jpg"
+                        <img src="/site/img/lampe.jpg"
                             class="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
                             alt="Luminaire arc">
                     </div>
@@ -228,7 +284,8 @@
                 <div class="inline-block">
                     <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[1px] h-16 bg-gold/30"></div>
 
-                    <a href="/catalogue-awouloh-design.pdf" target="_blank"
+                    <a href="https://drive.google.com/file/d/1E6uWUegr62REuP0hp46kMb-hQwTQg6sh/view?usp=drive_link"
+                        target="_blank"
                         class="relative inline-flex flex-col items-center px-14 py-7 bg-transparent border border-gold/40 text-white overflow-hidden transition-all duration-500 hover:border-gold group">
 
                         <div
@@ -261,5 +318,33 @@
     </section>
 
 </body>
+<script>
+    // Menu burger toggle
+    const burgerBtn = document.getElementById('burger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const burgerIcon = document.getElementById('burger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            mobileMenu.classList.toggle('translate-x-full');
+            burgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        });
+
+        mobileLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                mobileMenu.classList.add('translate-x-full');
+                burgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+    }
+</script>
 
 </html>
