@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tes couleurs custom */
+@layer base {
+  :root {
+    --gold: #C9A962;
+    --cream: #F5F1E8;
+    --warmBeige: #E8DCC8;
+    --taupe: #B5A89A;
+    --espresso: #1A1410;
+    --darkBrown: #2D2520;
+  }
+}
