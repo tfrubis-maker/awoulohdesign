@@ -1,0 +1,10 @@
+Options -Indexes
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Redirect www → non-www (canonique officiel)
+RewriteCond %{HTTP_HOST} ^www\.awoulohdesign\.com [NC]
+RewriteRule ^(.*)$ https://awoulohdesign.com/$1 [R=301,L]
