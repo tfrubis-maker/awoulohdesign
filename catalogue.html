@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue & prix | Awouloh Design Abidjan</title>
+    <meta name="description"
+        content="Feuilletez le catalogue Awouloh Design : canapés, lits, tables, chaises et miroirs haut de gamme avec les prix en FCFA. Commande sur WhatsApp, livraison à Abidjan.">
+    <meta property="og:title" content="Catalogue Awouloh Design, prix en FCFA">
+    <meta property="og:image" content="https://awoulohdesign.com/img/apercu-partage.jpg">
+    <meta property="og:url" content="https://awoulohdesign.com/catalogue.html">
+    <link rel="canonical" href="https://awoulohdesign.com/catalogue.html">
+    <link rel="icon" href="img/logo-or.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Inter:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#C9A962', goldDark: '#8C7134', cream: '#F5F1E8', warmBeige: '#E8DCC8',
+                        espresso: '#1A1410', darkBrown: '#2D2520'
+                    },
+                    fontFamily: { serif: ['Inter', 'sans-serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Inter partout : titres fins, pas de faux italique */
+        h1, h2, h3, h4 { font-weight: 300; letter-spacing: -0.02em; }
+        .italic, em { font-style: normal !important; }
+
+        .chips::-webkit-scrollbar { display: none; }
+        .chips { scrollbar-width: none; }
+    </style>
+</head>
+
+<body class="font-sans text-darkBrown bg-cream">
+
+    <header class="sticky top-0 z-30 bg-espresso text-cream">
+        <div class="px-[5%] py-3 flex items-center justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="img/logo-or.png" alt="Awouloh Design" class="h-11 w-auto">
+            </a>
+            <div class="flex items-center gap-3">
+                <a href="catalogue-awouloh-design.pdf" download class="inline-flex items-center gap-2 text-[15px] text-cream hover:text-gold transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 19h16"/></svg><span class="hidden sm:inline">Télécharger le PDF (12 Mo)</span><span class="sm:hidden">PDF</span></a>
+            </div>
+        </div>
+        <nav class="chips flex gap-2 overflow-x-auto px-[5%] pb-3" id="filtres" aria-label="Catégories"></nav>
+    </header>
+
+    <main class="px-[5%] py-10 max-w-[1500px] mx-auto">
+        <h1 class="font-serif text-4xl md:text-5xl mb-2" id="titre">Tout le catalogue</h1>
+        <p class="text-darkBrown/70 mb-8 text-sm md:text-base">Touchez une page pour l'agrandir. Un modèle vous plaît ?
+            Appuyez sur « Commander » : votre message WhatsApp est déjà prêt.</p>
+        <div id="grille" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </main>
+
+    <!-- Visionneuse -->
+    <div id="visionneuse" class="hidden fixed inset-0 z-50 bg-espresso/95 flex-col" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-between px-4 py-3 text-cream">
+            <span id="v-num" class="text-base"></span>
+            <button id="v-fermer" class="p-2 text-3xl leading-none" aria-label="Fermer">×</button>
+        </div>
+        <div class="flex-1 overflow-auto flex items-center justify-center px-2">
+            <img id="v-img" alt="" class="max-w-full max-h-full bg-white">
+        </div>
+        <div class="flex items-center gap-2 p-3">
+            <button id="v-prec" class="px-5 py-4 border border-cream/40 text-cream" aria-label="Page précédente">←</button>
+            <a id="v-commander" class="flex-1 text-center py-4 bg-[#25D366] text-white text-base font-semibold">
+                Commander un article de cette page
+            </a>
+            <button id="v-suiv" class="px-5 py-4 border border-cream/40 text-cream" aria-label="Page suivante">→</button>
+        </div>
+    </div>
+
+    <a data-wa="Bonjour Awouloh Design, j'ai une question sur votre catalogue." aria-label="Nous écrire sur WhatsApp"
+        class="fixed bottom-5 right-5 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-2xl">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.760-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5c0-5.18 4.220-9.4 9.41-9.4 2.51 0 4.87.98 6.65 2.76a9.34 9.34 0 0 1 2.75 6.65c0 5.19-4.22 9.4-9.4 9.4zm8-17.4A11.25 11.25 0 0 0 12.05.8C5.82.8.75 5.86.75 12.1c0 1.99.52 3.94 1.51 5.65L.65 23.6l5.99-1.57a11.3 11.3 0 0 0 5.4 1.38h.01c6.23 0 11.3-5.070 11.3-11.3 0-3.02-1.17-5.86-3.3-7.99z" />
+        </svg>
+    </a>
+
+    <script src="config.js"></script>
+    <script>
+        const TOTAL = 178;
+        // Catégories : plages de pages du catalogue
+        const categories = [
+            { id: 'tout', nom: 'Tout', pages: [[1, TOTAL]] },
+            { id: 'salon', nom: 'Canapés & fauteuils', pages: [[48, 124]] },
+            { id: 'chambre', nom: 'Lits', pages: [[41, 47]] },
+            { id: 'rangements', nom: 'Coiffeuses & commodes', pages: [[2, 9]] },
+            { id: 'salle-a-manger', nom: 'Salle à manger', pages: [[18, 38]] },
+            { id: 'tables', nom: 'Tables basses & consoles', pages: [[125, 178]] },
+            { id: 'deco', nom: 'Miroirs, poufs & bancs', pages: [[10, 17], [39, 40]] },
+        ];
+        const num = n => String(n).padStart(3, '0');
+        const pagesDe = cat => cat.pages.flatMap(([a, b]) => Array.from({ length: b - a + 1 }, (_, i) => a + i));
+
+        const grille = document.getElementById('grille');
+        const filtres = document.getElementById('filtres');
+        let pagesAffichees = [];
+
+        filtres.innerHTML = categories.map(c =>
+            `<a href="#${c.id}" data-cat="${c.id}" class="shrink-0 px-4 py-2 rounded-full border border-gold/40 text-sm whitespace-nowrap transition-colors">${c.nom}</a>`).join('');
+
+        function afficher(catId, pageCible) {
+            const cat = categories.find(c => c.id === catId) || categories[0];
+            pagesAffichees = pagesDe(cat);
+            document.getElementById('titre').textContent = cat.id === 'tout' ? 'Tout le catalogue' : cat.nom;
+            filtres.querySelectorAll('a').forEach(a => {
+                const actif = a.dataset.cat === cat.id;
+                a.classList.toggle('bg-gold', actif);
+                a.classList.toggle('text-espresso', actif);
+                a.classList.toggle('text-cream', !actif);
+            });
+            grille.innerHTML = pagesAffichees.map(p => `
+                <figure id="page-${p}" class="bg-white shadow-md">
+                    <button type="button" data-page="${p}" class="block w-full aspect-[1400/990]">
+                        <img src="img/catalogue/mini/p${num(p)}.jpg" alt="Catalogue Awouloh Design, page ${p}" loading="lazy" class="w-full h-full object-contain">
+                    </button>
+                    <figcaption class="flex items-center justify-between gap-2 px-4 py-3 border-t border-darkBrown/10">
+                        <span class="text-sm text-darkBrown/60">Page ${p}</span>
+                        <a data-wa="Bonjour Awouloh Design, je suis intéressé(e) par un article de la page ${p} du catalogue :"
+                            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#25D366] text-white text-sm font-medium hover:brightness-110 transition">Commander →</a>
+                    </figcaption>
+                </figure>`).join('');
+            AWOULOH.activerLiens(grille);
+            if (pageCible) document.getElementById('page-' + pageCible)?.scrollIntoView({ block: 'center' });
+        }
+
+        // Visionneuse
+        const v = document.getElementById('visionneuse');
+        const vImg = document.getElementById('v-img');
+        let index = 0;
+        function ouvrir(i) {
+            index = (i + pagesAffichees.length) % pagesAffichees.length;
+            const p = pagesAffichees[index];
+            vImg.src = `img/catalogue/p${num(p)}.jpg`;
+            vImg.alt = `Catalogue page ${p}`;
+            document.getElementById('v-num').textContent = `Page ${p} / ${TOTAL}`;
+            const lien = document.getElementById('v-commander');
+            lien.href = AWOULOH.lienWhatsapp(`Bonjour Awouloh Design, je suis intéressé(e) par un article de la page ${p} du catalogue :`);
+            lien.target = '_blank';
+            v.classList.remove('hidden'); v.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function fermer() {
+            v.classList.add('hidden'); v.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        grille.addEventListener('click', e => {
+            const b = e.target.closest('button[data-page]');
+            if (b) ouvrir(pagesAffichees.indexOf(+b.dataset.page));
+        });
+        document.getElementById('v-fermer').onclick = fermer;
+        document.getElementById('v-prec').onclick = () => ouvrir(index - 1);
+        document.getElementById('v-suiv').onclick = () => ouvrir(index + 1);
+        document.addEventListener('keydown', e => {
+            if (v.classList.contains('hidden')) return;
+            if (e.key === 'Escape') fermer();
+            if (e.key === 'ArrowLeft') ouvrir(index - 1);
+            if (e.key === 'ArrowRight') ouvrir(index + 1);
+        });
+        let x0 = null;
+        v.addEventListener('touchstart', e => x0 = e.touches[0].clientX, { passive: true });
+        v.addEventListener('touchend', e => {
+            if (x0 === null) return;
+            const dx = e.changedTouches[0].clientX - x0;
+            if (Math.abs(dx) > 60) ouvrir(index + (dx < 0 ? 1 : -1));
+            x0 = null;
+        });
+
+        // Navigation par #categorie ou #page-N
+        function lireAdresse() {
+            const h = location.hash.slice(1);
+            const m = h.match(/^page-(\d+)$/);
+            if (m) afficher('tout', +m[1]);
+            else afficher(h || 'tout');
+        }
+        window.addEventListener('hashchange', lireAdresse);
+        lireAdresse();
+        AWOULOH.activerLiens();
+    </script>
+</body>
+
+</html>

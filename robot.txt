@@ -1,5 +1,0 @@
-Fichier `robots.txt` à la racine :
-```
-User-agent: *
-Allow: /
-Sitemap: https://awoulohdesign.com/sitemap.xml

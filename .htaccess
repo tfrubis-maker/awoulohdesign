@@ -8,3 +8,11 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 # Redirect www → non-www (canonique officiel)
 RewriteCond %{HTTP_HOST} ^www\.awoulohdesign\.com [NC]
 RewriteRule ^(.*)$ https://awoulohdesign.com/$1 [R=301,L]
+
+# Anciennes pages (juin 2026) -> nouvelles sections
+RewriteRule ^site/collections\.html$ /catalogue.html [R=301,L]
+RewriteRule ^site/packages\.html$ / [R=301,L]
+RewriteRule ^site/professionnels\.html$ /#professionnels [R=301,NE,L]
+RewriteRule ^site/a-propos\.html$ /#apropos [R=301,NE,L]
+RewriteRule ^site/contact\.html$ /#contact [R=301,NE,L]
+RewriteRule ^site/?$ / [R=301,L]
