@@ -12,8 +12,29 @@ const AWOULOH = {
     tiktok: '',
 };
 
-AWOULOH.lienWhatsapp = message =>
-    `https://wa.me/${AWOULOH.whatsapp}?text=${encodeURIComponent(message)}`;
+// Code partenaire : awoulohdesign.com/?ref=CODE
+// Le code est mémorisé 30 jours dans le navigateur du visiteur et ajouté à
+// chacun de ses messages WhatsApp, pour savoir quel partenaire a apporté le client.
+// Si le visiteur arrive plus tard avec un autre code, c'est le dernier qui compte.
+AWOULOH.codePartenaire = (() => {
+    const CLE = 'awouloh-ref', DUREE = 30 * 24 * 3600 * 1000;
+    const nettoyer = c => (c || '').toUpperCase().replace(/[^A-Z0-9-]/g, '').slice(0, 20);
+    const nouveau = nettoyer(new URLSearchParams(location.search).get('ref'));
+    try {
+        if (nouveau) {
+            localStorage.setItem(CLE, JSON.stringify({ code: nouveau, date: Date.now() }));
+            return nouveau;
+        }
+        const memo = JSON.parse(localStorage.getItem(CLE) || 'null');
+        if (memo && Date.now() - memo.date < DUREE) return nettoyer(memo.code);
+    } catch (e) { /* navigation privée : on garde au moins le code de l'adresse */ }
+    return nouveau;
+})();
+
+AWOULOH.lienWhatsapp = message => {
+    if (AWOULOH.codePartenaire) message += `\n\n(Réf : ${AWOULOH.codePartenaire})`;
+    return `https://wa.me/${AWOULOH.whatsapp}?text=${encodeURIComponent(message)}`;
+};
 
 // "2250701020304" -> "+225 07 01 02 03 04"
 AWOULOH.numeroAffiche = () => {
